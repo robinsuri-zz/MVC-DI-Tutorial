@@ -14,7 +14,6 @@ import javax.sql.DataSource;
 import java.beans.PropertyVetoException;
 
 @Configuration
-@ComponentScan("net.media.springmvcexample")
 @PropertySource("classpath:application.properties")
 @EnableWebMvc
 public class AppConfig {
