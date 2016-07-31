@@ -14,17 +14,22 @@ public class UserService {
     @Autowired private UserRepository userRepository;
 
     public APIPOSTResponse addUser(User user) {
+        int id;
         if(!isValidUser(user)) {
             return new APIPOSTResponse(false, "Is not a valid user");
         }
         try {
-            userRepository.addUser(user);
+           id = userRepository.addUser(user);
         } catch (Exception e) {
             return new APIPOSTResponse(false, "Couldn't add user at this time");
         }
-        return new APIPOSTResponse(true, "");
+        return new APIPOSTResponse(true, String.valueOf(id));
     }
 
+    public User getUser(int id) {
+        User user = userRepository.getUser(id);
+        return user;
+    }
     private boolean isValidUser(User user) {
         return !user.getUserName().equals("");
     }

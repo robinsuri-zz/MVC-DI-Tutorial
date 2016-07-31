@@ -6,6 +6,7 @@ package net.media.springmvcexample.model;
 public class User {
     private String userName;
     private String email;
+    private String todo;
 
     public String getUserName() {
         return userName;
@@ -21,5 +22,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getTodo() {
+        return todo;
+    }
+
+    public void setTodo(String todo) {
+        this.todo = todo;
     }
 }
